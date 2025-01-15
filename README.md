@@ -27,3 +27,15 @@ Technical Requirements
 - Offline Support: AsyncStorage for local message storage.
 - Location Data: Integration with map views for location sharing.
 
+
+Screen Design
+
+1. Start Screen:
+   - Title: ChatSphere - Font size 45, weight 600, color #FFFFFF.
+   - Input: Placeholder text "Your Name" - Font size 16, weight 300, color #757083.
+   - Background color selection: Four color options #090C08, #474056, #8A95A5, #B9C6AE.
+   - Start button: "Open Chat" - Font size 16, weight 600, color #FFFFFF, background #757083.
+
+2. Chat Screen:
+   - Displays messages, image previews, and location links.
+   - Options to send text, images, and location.
