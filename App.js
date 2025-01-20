@@ -16,12 +16,13 @@ import {
   enableNetwork,
 } from "firebase/firestore"; // Firestore database functions
 import { useNetInfo } from "@react-native-community/netinfo"; // Library to monitor network connectivity
+import { getStorage } from "firebase/storage";
 
 // Suppress specific warning messages
 LogBox.ignoreLogs(["AsyncStorage has been extracted from"]);
 
-// Create a stack navigator 
-const Stack = createNativeStackNavigator(); 
+// Create a stack navigator
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   // Web app's Firebase configuration
@@ -54,11 +55,13 @@ const App = () => {
     appId: "1:802092642442:web:a836a33e68722ee2b73d73", // Your project's app ID
   };
 
-  // Initialize Firebase 
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
   // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
+
+  const storage = getStorage(app);
 
   return (
     // Navigation container to manage screen transitions
@@ -75,6 +78,7 @@ const App = () => {
             <Chat
               isConnected={connectionStatus.isConnected}
               db={db}
+              storage={storage}
               {...props} // Pass any additional props
             />
           )}
